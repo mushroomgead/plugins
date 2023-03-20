@@ -324,16 +324,16 @@ void main() {
     });
 
     test('videoEventsFor', () async {
-      _ambiguate(ServicesBinding.instance)
-          ?.defaultBinaryMessenger
+      _ambiguate(TestDefaultBinaryMessengerBinding.instance)!
+          .defaultBinaryMessenger
           .setMockMessageHandler(
         'flutter.io/videoPlayer/videoEvents123',
         (ByteData? message) async {
           final MethodCall methodCall =
               const StandardMethodCodec().decodeMethodCall(message);
           if (methodCall.method == 'listen') {
-            await _ambiguate(ServicesBinding.instance)
-                ?.defaultBinaryMessenger
+            await _ambiguate(TestDefaultBinaryMessengerBinding.instance)!
+                .defaultBinaryMessenger
                 .handlePlatformMessage(
                     'flutter.io/videoPlayer/videoEvents123',
                     const StandardMethodCodec()
@@ -345,8 +345,8 @@ void main() {
                     }),
                     (ByteData? data) {});
 
-            await _ambiguate(ServicesBinding.instance)
-                ?.defaultBinaryMessenger
+            await _ambiguate(TestDefaultBinaryMessengerBinding.instance)!
+                .defaultBinaryMessenger
                 .handlePlatformMessage(
                     'flutter.io/videoPlayer/videoEvents123',
                     const StandardMethodCodec()
@@ -355,8 +355,8 @@ void main() {
                     }),
                     (ByteData? data) {});
 
-            await _ambiguate(ServicesBinding.instance)
-                ?.defaultBinaryMessenger
+            await _ambiguate(TestDefaultBinaryMessengerBinding.instance)!
+                .defaultBinaryMessenger
                 .handlePlatformMessage(
                     'flutter.io/videoPlayer/videoEvents123',
                     const StandardMethodCodec()
@@ -369,8 +369,8 @@ void main() {
                     }),
                     (ByteData? data) {});
 
-            await _ambiguate(ServicesBinding.instance)
-                ?.defaultBinaryMessenger
+            await _ambiguate(TestDefaultBinaryMessengerBinding.instance)!
+                .defaultBinaryMessenger
                 .handlePlatformMessage(
                     'flutter.io/videoPlayer/videoEvents123',
                     const StandardMethodCodec()
@@ -379,8 +379,8 @@ void main() {
                     }),
                     (ByteData? data) {});
 
-            await _ambiguate(ServicesBinding.instance)
-                ?.defaultBinaryMessenger
+            await _ambiguate(TestDefaultBinaryMessengerBinding.instance)!
+                .defaultBinaryMessenger
                 .handlePlatformMessage(
                     'flutter.io/videoPlayer/videoEvents123',
                     const StandardMethodCodec()
